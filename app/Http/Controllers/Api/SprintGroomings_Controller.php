@@ -27,7 +27,16 @@ class SprintGroomings_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataSprintGroomings = new SprintGroomings;
+        $dataSprintGroomings->title = $request->title;
+        $dataSprintGroomings->description = $request->description;
+        $dataSprintGroomings->meeting_date = $request->meeting_date;
+
+        $post = $dataSprintGroomings->save();
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses memasukan data'
+        ]);
     }
 
     /**
@@ -35,7 +44,14 @@ class SprintGroomings_Controller extends Controller
      */
     public function show(string $id)
     {
-        $data = SprintGroomings::find($)
+        $data = SprintGroomings::find($id);
+        if ($data) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Data Ditemukan',
+                'data' => $data
+            ], 200);
+        }
     }
 
     /**

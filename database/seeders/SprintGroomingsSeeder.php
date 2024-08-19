@@ -12,7 +12,7 @@ class SprintGroomingsSeeder extends Seeder
     {
         SprintGroomings::create([
             'title' => 'First Grooming',
-            'description' => 'This is the first sprint grooming session.',
+            'description' => 'Membahas API pada sprint groomings.',
             'meeting_date' => '2024-07-01',
         ]);
 

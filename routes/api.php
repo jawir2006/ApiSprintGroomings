@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/sprint_groomings', [SprintGroomings_Controller::class, 'index']);
-Route::post('/sprint_groomings', [SprintGroomings_Controller::class, 'store']);
+Route::post('sprint_groomings', [SprintGroomings_Controller::class, 'store']);
 Route::get('/sprint_groomings/{id}', [SprintGroomings_Controller::class, 'show']);
 Route::put('/sprint_groomings/{id}', [SprintGroomings_Controller::class, 'update']);
 Route::delete('/sprint_groomings/{id}', [SprintGroomings_Controller::class, 'destroy']);
